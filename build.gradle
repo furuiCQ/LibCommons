@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+}
+
+dependencies {
+    //implementation 外部无法引用
+    api "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    //Common
+    api "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    api "com.orhanobut:logger:$rootProject.ext.loggerVersion"
+    api "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+    api "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
+    api "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjavaVersion"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.ext.adapterConverterVersion"
+    //转换器，请求结果转换成Model
+    api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.adapterConverterVersion"
+    //配合Rxjava 使用
+}
